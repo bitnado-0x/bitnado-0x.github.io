@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <meta http-equiv="refresh" content="0; url=app/index.html">
+    <meta http-equiv="refresh" content="3; url=app/index.html">
     <title>Bitnado 0x</title>
+    <style>
+        /* 动态变色动画 */
+        #colorful-test {
+            font-size: 3em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20vh;
+            transition: color 0.5s;
+        }
+    </style>
 </head>
 <body>
+    <div id="colorful-test">test</div>
+    <script>
+        // 颜色数组
+        const colors = ['#e74c3c', '#f1c40f', '#2ecc71', '#3498db', '#9b59b6', '#e67e22', '#1abc9c'];
+        let idx = 0;
+        setInterval(() => {
+            document.getElementById('colorful-test').style.color = colors[idx % colors.length];
+            idx++;
+        }, 500);
+    </script>
     <!-- 自动跳转到 app/index.html -->
 </body>
 </html>
+
