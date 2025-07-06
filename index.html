@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <meta http-equiv="refresh" content="3; url=app/index.html">
     <title>Bitnado 0x</title>
+    <link rel="stylesheet" href="material/styles/main.css">
     <style>
-        /* 动态变色动画 */
+        .loading-overlay {
+            font-size: 5em;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-left: 6vw;
+            padding-top: 8vh;
+        }
         #colorful-test {
-            font-size: 3em;
+            font-size: 5em;
             font-weight: bold;
-            text-align: center;
-            margin-top: 20vh;
-            transition: color 0.5s;
+            position: absolute;
+            top: 8vh;
+            left: 6vw;
+            /* 可根据需要微调 */
         }
     </style>
 </head>
 <body>
-    <div id="colorful-test">test</div>
+    <div class="loading-overlay">Loading<span id="loading-dots">...</span></div>
+    <div class="blur-content" id="main-content">
+        <div id="colorful-test">test</div>
+    </div>
     <script>
         // 颜色数组
         const colors = ['#e74c3c', '#f1c40f', '#2ecc71', '#3498db', '#9b59b6', '#e67e22', '#1abc9c'];
@@ -25,7 +35,10 @@
             idx++;
         }, 500);
     </script>
-    <!-- 自动跳转到 app/index.html -->
+    <script src="material/styles/loading.js"></script>
+</body>
+</html>
+    </script>
 </body>
 </html>
 

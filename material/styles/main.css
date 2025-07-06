@@ -1,5 +1,46 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background: #181a1b;
+    color: #e0e0e0;
     /* ...existing code... */
 }
+
+/* 全屏灰色 Loading 遮罩层 */
+.loading-overlay {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(40, 40, 40, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #bbb;
+    letter-spacing: 0.2em;
+    transition: opacity 1s;
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* 淡出动画 */
+.loading-overlay.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s;
+}
+
+/* 内容虚化效果 */
+.blur-content {
+    filter: blur(18px);
+    transition: filter 1.5s;
+}
+
+/* 虚化消失 */
+.blur-content.unblur {
+    filter: blur(0);
+    transition: filter 1.5s;
+}
+
+/* 可根据需要自定义滚动条等深色细节 */
+/* ...existing code... */
